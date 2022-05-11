@@ -12,6 +12,5 @@ namespace Clean_App.Models
      public string Password { get; set; }
 
 
-        //check
     }
 }
