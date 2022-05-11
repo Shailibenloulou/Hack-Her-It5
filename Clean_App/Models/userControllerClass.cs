@@ -5,10 +5,10 @@ using System.Web;
 
 namespace Clean_App.Models
 {
-    public class userControllerClass
+    public class userControllerClass//MAP
     {
      public int Number { get; set; }
      public string UserName { get; set; }
-        public string Password { get; set}
+     public string Password { get; set; }
     }
 }
