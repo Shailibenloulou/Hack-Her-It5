@@ -29,10 +29,13 @@ namespace WebApplication2
         [MethodImpl(MethodImplOptions.Synchronized)]
         protected void creatGroupButton_Click(object sender, EventArgs e)
         {
-            var groupList = XmlTools.LoadListFromXMLSerializer<Group>(@"Groups.xml");
+            var xml = new DLXML();
+            var groupList = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\chagi\source\repos\WebApplication2\WebApplication2\xml\Groups.xml");
             Group g = new Group();
 
-
+            /////////////////////////////////
+            ///read from xml file
+            ////////////////////////////////
             g.Id = GroupId++;
             g.Name = nameOfGroup.Text;
             g.Description = description.Text;
