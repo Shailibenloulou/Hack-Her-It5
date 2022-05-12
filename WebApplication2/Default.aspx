@@ -22,7 +22,7 @@
             govmap.createMap('map',
                 {
                     token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
-                    layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+                    layers: ["HOF_NAKI_update"],
                     showXY: true,
                     identifyOnClick: true,
                     isEmbeddedToggle: false,
@@ -38,35 +38,63 @@
     </script>
 </head>
 <body>
-    <div id="map" style="width: 600px; height: 600px"></div>
+    <div id="map" style="width: 500px; height: 600px"></div>
     <form id="form1" runat="server">
-        <asp:DropDownList ID="DropDownList1" runat="server">
-        </asp:DropDownList>
         <div class="col-md-7">
 
-
-
             <p>
-                מיקום
+                מיקום<asp:TextBox ID="location" runat="server" Height="19px" OnTextChanged="location_TextChanged1" style="margin-right: 27px; margin-top: 17px" Width="149px"></asp:TextBox>
+           <%-- &nbsp;<asp:ListView datasourceid="ObjectDataSource1" ID="ListView1" runat="server" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" style="margin-right: 151px; margin-top: 6px">
+               <LayoutTemplate>
+          <table cellpadding="4" width="500" runat="server" id="tblCountries">
+            <tr runat="server">
+              <th runat="server">Code</th>
+              <th runat="server">Name</th>
+            </tr>
+            <tr runat="server" id="itemPlaceholder" />
+          </table>
+                   
+        </LayoutTemplate>
+                    <ItemTemplate>
+                  <tr class="item" runat="server">
+                    <td>
+                      <asp:Label ID="CountryCodeLabel" runat="server" 
+                        Text='<%# Eval("Data")%>' />
+                    </td>          
+                    <td>
+                      <asp:Label ID="NameLabel" runat="server" 
+                        Text='<%# Eval("Name")%>' />
+                    </td>
+                  </tr>
+        </ItemTemplate> 
+                    
+                </asp:ListView>
             </p>
+
+            <asp:objectdatasource
+          id="ObjectDataSource1"
+          runat="server"
+          selectmethod="GetAllPlaces"
+          typename=" WebApplication2.Place" />
+
+           <%-- <asp:xmldatasource
+        id="XmlDataSource1"
+        runat="server"
+        datafile="test.xml" >--%>
+                
+                </asp:xmldatasource>
         </div>
 
-        <p>
-            <asp:TextBox ID="location" runat="server">בדיקה</asp:TextBox>
-            &nbsp;
-        </p>
         <p>
             רמת נקיות
         </p>
         <p>
-            נקי מאוד
-        </p>
+            <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged"></asp:TextBox>
         <p>
             האם יש קבוצה
         </p>
         <p>
-            לא
-        </p>
+            <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox>
         <p>
             ת.ז.
         </p>
@@ -120,7 +148,7 @@
             &nbsp;
         </p>
         <p>
-            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
+            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" />
         </p>
         <p>
             &nbsp;
