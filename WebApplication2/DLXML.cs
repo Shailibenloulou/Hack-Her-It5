@@ -11,17 +11,13 @@ namespace WebApplication2
 {
     public class DLXML
     {
-
         #region beach
         public static List<Place> beaches;
-        string beachFilePath = @"C:\Users\chagi\source\repos\WebApplication2\WebApplication2\test.xml";
-
+        string beachFilePath = @"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\test.xml";
 
         public DLXML()
         {
-            beaches = new List<Place>();
-            beaches = WebApplication2.XmlTools.LoadListFromXMLSerializer<Place>(beachFilePath);
-
+            beaches = XmlTools.LoadListFromXMLSerializer<Place>(beachFilePath);
         }
 
         //public IEnumerable<DO.Student> GetAllStudents(Func<DO.Student, bool> predicat = null)
@@ -35,7 +31,6 @@ namespace WebApplication2
 
         //    return v.Where(predicat).OrderByDescending(s => s.StudentId);
         //}
-
 
         #endregion
     }

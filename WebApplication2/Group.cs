@@ -21,7 +21,7 @@ namespace WebApplication2
             Id = 0;
             Name = "default";
             Description = "default";
-            MaxSize = 0;
+            MaxSize = 5;
             Participants = new List<User>();
             Area = new Location(0, 0);
             IsFull = true;
