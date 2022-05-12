@@ -22,7 +22,7 @@
             govmap.createMap('map',
                 {
                     token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
-                    layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+                    layers: ["HOF_NAKI_update"],
                     showXY: true,
                     identifyOnClick: true,
                     isEmbeddedToggle: false,
@@ -38,13 +38,13 @@
     </script>
 </head>
 <body>
-    <div id="map" style="width: 600px; height: 600px"></div>
+    <div id="map" style="width: 500px; height: 600px"></div>
     <form id="form1" runat="server">
         <div class="col-md-7">
 
             <p>
                 מיקום<asp:TextBox ID="location" runat="server" Height="31px" OnTextChanged="location_TextChanged1" style="margin-right: 27px; margin-top: 17px" Width="149px"> </asp:TextBox>
-            &nbsp;<asp:ListView datasourceid="ObjectDataSource1" ID="ListView1" runat="server" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" style="margin-right: 151px; margin-top: 6px">
+           <%-- &nbsp;<asp:ListView datasourceid="ObjectDataSource1" ID="ListView1" runat="server" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" style="margin-right: 151px; margin-top: 6px">
                <LayoutTemplate>
           <table cellpadding="4" width="500" runat="server" id="tblCountries">
             <tr runat="server">
@@ -86,9 +86,6 @@
         </div>
 
         <p>
-            &nbsp;
-        </p>
-        <p>
             רמת נקיות
         </p>
         <p>
@@ -97,8 +94,7 @@
             האם יש קבוצה
         </p>
         <p>
-            לא
-        </p>
+            <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox>
         <p>
             ת.ז.
         </p>
@@ -152,7 +148,7 @@
             &nbsp;
         </p>
         <p>
-            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
+            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" />
         </p>
         <p>
             &nbsp;

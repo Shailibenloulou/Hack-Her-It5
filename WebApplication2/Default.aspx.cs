@@ -47,7 +47,7 @@ namespace WebApplication2
             u.Email = mailAddress.Text;
             u.Phone = phoneNumber.Text;
             g.Participants = new List<User>() { u };
-            g.Area = new Location();//to take location from map
+            g.Area = location.Text; //new Location();//to take location from map
             g.IsFull = false;
             g.IsDone = false;
 
@@ -82,13 +82,31 @@ namespace WebApplication2
             for (int i=0; i < temp.Count(); i++)
             {
                 if (temp[i].Name == location.Text)
-                    clean.Text = "hello";
+                    clean.Text = temp[i].Data;
+            }
+
+            List<Group> users = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
+            for (int i = 0; i < users.Count(); i++)
+            {
+                if (users[i].Name == location.Text)
+                {
+                    if (users[i].Participants.Count() < users[i].MaxSize)
+                        groupAns.Text = " כן, מעוניין להצטרף?";
+                }
+                else
+                    groupAns.Text = "לא";
+
             }
         }
 
         protected void clean_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void groupAns_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 
