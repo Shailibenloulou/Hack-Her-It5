@@ -32,46 +32,7 @@ namespace WebApplication2
 
             }
         }
-        //protected void Page_Load(object sender, EventArgs e)
-
-        //{
-
-        //    XmlTextWriter xmlwriter = new XmlTextWriter(Server.MapPath("App_Data/Employee.xml"), Encoding.UTF8);
-
-        //    xmlwriter.Formatting = Formatting.Indented;
-
-        //    xmlwriter.WriteStartDocument();
-
-        //    xmlwriter.WriteStartElement("Employees");
-
-
-
-        //    xmlwriter.WriteStartElement("Employee");
-
-        //    xmlwriter.WriteAttributeString("type", "Permanent");
-
-        //    xmlwriter.WriteElementString("ID", "100");
-
-        //    xmlwriter.WriteElementString("FirstName", "Satheesh");
-
-        //    xmlwriter.WriteElementString("LastName", "Babu");
-
-        //    xmlwriter.WriteElementString("Dept", "IT");
-
-        //    xmlwriter.WriteEndElement();
-
-
-
-        //    xmlwriter.WriteEndElement();
-
-        //    xmlwriter.WriteEndDocument();
-
-        //    xmlwriter.Flush();
-
-        //    xmlwriter.Close();
-
-        //}
-
+        
         sealed partial class DalXml  //singelton class
         {
             private static DalXml instance = null;

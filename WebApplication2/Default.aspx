@@ -17,14 +17,12 @@
         }
 
     </style>
-
-
             <script type="text/javascript">
                 $(document).ready(function () {
                     govmap.createMap('map',
                         {
                             token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
-                            layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+                            layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL", "HOF_NAKI_update","ganim_leumim"],
                             showXY: true,
                             //identifyOnClick: true,
                             isEmbeddedToggle: false,
@@ -37,14 +35,12 @@
             </script>
     </head>
      <body>
+    
     <form id="form1" runat="server">
         <div class="col-md-7">
             <div id="map" style="width:600px;height:600px" ></div>
            </div> 
-        <p>
-            מיקום</p>
-       
-        
+        <p >מיקום</p> 
         <p>
             <asp:TextBox  ID="location" runat="server">חוף הצוק</asp:TextBox>
         &nbsp;</p>
@@ -89,7 +85,10 @@
             <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
         </p>
         <p>
-            &nbsp;</p>
+            <asp:ListView ID="ListView1" runat="server" DataSourceID="XmlDataSourceY">
+            </asp:ListView>
+            <asp:XmlDataSource ID="XmlDataSourceY" runat="server"></asp:XmlDataSource>
+        </p>
         <p>
             &nbsp;</p>
         <p>
@@ -98,8 +97,10 @@
             &nbsp;</p>
         <p>
             &nbsp;</p>
+     
         
     </form>
+    
 </body>
 </html>
 
