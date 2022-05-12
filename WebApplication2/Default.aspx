@@ -74,13 +74,14 @@
         <p>
             שם
         </p>
-        <p>
-            יעל</p>
-        <p>
+         <p>
+            <asp:TextBox ID="name" runat="server"></asp:TextBox>
+        </p>
             משפחה
         </p>
         <p>
-            גלוברמן</p>
+            <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
+        </p>
         <p>
             מספר טלפון
         </p>
