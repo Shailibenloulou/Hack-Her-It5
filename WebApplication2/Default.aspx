@@ -17,11 +17,8 @@
         }
 
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="col-md-7">
-            <div id="map" style="width:600px;height:600px"></div>
+
+
             <script type="text/javascript">
                 $(document).ready(function () {
                     govmap.createMap('map',
@@ -29,73 +26,67 @@
                             token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
                             layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
                             showXY: true,
-                            identifyOnClick: true,
+                            //identifyOnClick: true,
                             isEmbeddedToggle: false,
                             background: "1",
                             layersMode: 1,
+                            onClick: alert('click event'),
                             zoomButtons: false
                         });
-
-                    govmap.onEvent(govmap.events.CLICK).then(function (e) {
-                        alert("click event ");
                     });
-                });
-            </script> 
-        
+            </script>
+    </head>
+     <body>
+    <form id="form1" runat="server">
+        <div class="col-md-7">
+            <div id="map" style="width:600px;height:600px" ></div>
+           </div> 
         <p>
             מיקום</p>
-        </div>
+       
         
         <p>
-            <asp:TextBox  ID="location" runat="server">בדיקה</asp:TextBox>
+            <asp:TextBox  ID="location" runat="server">חוף הצוק</asp:TextBox>
         &nbsp;</p>
         <p>
             רמת נקיות
         </p>
         <p>
-            <asp:TextBox ID="cleaninesLevel" runat="server"></asp:TextBox>
-        </p>
+            נקי מאוד</p>
         <p>
             האם יש קבוצה</p>
         <p>
-            <asp:TextBox ID="isTherAnotherGroup" runat="server"></asp:TextBox>
-        </p>
+            לא</p>
         <p>
             שם
         </p>
         <p>
-            <asp:TextBox ID="name" runat="server"></asp:TextBox>
-        </p>
+            יעל</p>
         <p>
             משפחה</p>
         <p>
-            <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
-        </p>
+            גלוברמן</p>
         <p>
             מספר טלפון
         </p>
         <p>
-            <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox>
-        </p>
+            0527703139</p>
          <p>
              גודל מקסימלי של קבוצה</p>
         <p>
-            <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox>
-        </p>
+            10</p>
          <p>
              כתובת מייל</p>
         <p>
-            <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox>
-        </p>
+            yaeli@gmail.com</p>
          <p>
              שם קבוצה</p>
         <p>
-            <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox>
-        </p>
+            1</p>
          <p>
              &nbsp;</p>
         <p>
-            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" />
+            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
         </p>
         <p>
             &nbsp;</p>
