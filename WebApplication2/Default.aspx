@@ -13,7 +13,7 @@
         }
 
         #ifrMap {
-            width: 637px;
+            width: 50%;
             height: 417px;
         }
     </style>
@@ -36,136 +36,106 @@
             });
         });
     </script>
+    <script  type="text/css">
+#wrapper {
+    width: 500px;
+    border: 1px solid black;
+    overflow: auto; /* so the size of the wrapper is alway the size of the longest content */
+}
+#map {
+    float: left;
+    width: 300px;
+    border: 1px solid red;
+}
+#div2 {
+    border: 1px solid green;
+    margin: 0 0 0 302px; /* considering the border you need to use a margin so the content does not float under the first div*/
+}</script>
 </head>
 <body>
-    <div id="map" style="width: 500px; height: 600px"></div>
-    <form id="form1" runat="server">
-        <div class="col-md-7">
-
-            <p>
-                מיקום<asp:TextBox ID="location" runat="server" Height="19px" OnTextChanged="location_TextChanged1" style="margin-right: 27px; margin-top: 17px" Width="149px"></asp:TextBox>
-           <%-- &nbsp;<asp:ListView datasourceid="ObjectDataSource1" ID="ListView1" runat="server" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" style="margin-right: 151px; margin-top: 6px">
-               <LayoutTemplate>
-          <table cellpadding="4" width="500" runat="server" id="tblCountries">
-            <tr runat="server">
-              <th runat="server">Code</th>
-              <th runat="server">Name</th>
-            </tr>
-            <tr runat="server" id="itemPlaceholder" />
-          </table>
-                   
-        </LayoutTemplate>
-                    <ItemTemplate>
-                  <tr class="item" runat="server">
-                    <td>
-                      <asp:Label ID="CountryCodeLabel" runat="server" 
-                        Text='<%# Eval("Data")%>' />
-                    </td>          
-                    <td>
-                      <asp:Label ID="NameLabel" runat="server" 
-                        Text='<%# Eval("Name")%>' />
-                    </td>
-                  </tr>
-        </ItemTemplate> 
-                    
-                </asp:ListView>
-            </p>
-
-            <asp:objectdatasource
-          id="ObjectDataSource1"
-          runat="server"
-          selectmethod="GetAllPlaces"
-          typename=" WebApplication2.Place" />
-
-           <%-- <asp:xmldatasource
-        id="XmlDataSource1"
-        runat="server"
-        datafile="test.xml" >--%>
-                
-                </asp:xmldatasource>
-        </div>
-
-        <p>
-            רמת נקיות
-        </p>
-        <p>
-            <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged"></asp:TextBox>
-        <p>
-            האם יש קבוצה
-        </p>
-        <p>
-            <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox>
-        <p>
-            ת.ז.
-        </p>
-        <p>
-            <asp:TextBox ID="id" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            שם
-        </p>
-        <p>
-            <asp:TextBox ID="name" runat="server"></asp:TextBox>
-        </p>
-        <p>
+   <div id="wrapper"> <div id="map" style="width:50%"></div>
+  <div id="div2">  <form id="form1" runat="server">
+      <!--  <div class="col-md-7"></div>-->
+            <table>
+<tr></tr><tr><td>
+        <br/>
+            <span>    מיקום</span>
+   <div> <asp:TextBox ID="location" runat="server" Height="19px" OnTextChanged="location_TextChanged1" ></asp:TextBox></div>
+     
+  
+      </td>
+          <td>
+               <br/>
+           <span style="color:red; background-color:blue"> רמת נקיות</span>        
+        
+           <div> <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged" BackColor="Yellow"></asp:TextBox></div>
+        </td>
+           <td>
+                <br/>
+          <span>  האם יש קבוצה </span>
+       
+        
+          <div>  <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox></div>
+        </td></tr><tr></tr><tr>
+           <td>
+         <span>   האם אתה רוצה להצטרף לקבוצה קיימת</span>
+        
+          <div>  <asp:CheckBox ID="checkBoxJoinGroup"  runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" BorderColor="Red" />
+      </div></td>
+           
+           <td><span>
+            האם אתה רוצה ליצור קבוצה חדשה</span>
+        
+        <div><asp:CheckBox ID="CheckBox1" runat="server" /></div>
+        <br />
+             </td></tr><tr></tr><tr>
+             <td>
+          <span>  ת.ז.</span>
+        
+           <div> <asp:TextBox ID="id" runat="server" BorderStyle="Double"></asp:TextBox></div>
+        </td><td>
+      <span>      שם</span>
+        
+        
+        <div> <asp:TextBox ID="name" runat="server"></asp:TextBox></div>
+       </td><td><span>
             משפחה
-        </p>
-        <p>
-            <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            מספר טלפון
-        </p>
-        <p>
-            <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            גודל מקסימלי של קבוצה
-        </p>
-        <p>
-            <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            כתובת מייל
-        </p>
-        <p>
-            <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            שם קבוצה
-        </p>
-        <p>
-            <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox>
-        </p>
+        </span><div>
+            <asp:TextBox ID="lastName" runat="server"></asp:TextBox></div>
+     </td><td>
+           <span> מספר טלפון</span>
 
-        <p>
-            תיאור
-        </p>
-        <p>
-            <asp:TextBox ID="description" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" />
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            &nbsp;
-        </p>
-
+          <div> <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox></div></td>
+                 </tr><tr></tr><tr></tr><tr>
+             <td>
+                 <br/>
+          <span>גודל מקסימלי של קבוצה</span>
+       
+          <div>  <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox></div>
+      </td><td> <br/>
+          <span>  כתובת מייל</span>
+      
+         <div>   <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox></div></td>
+       <td> <br/>
+        <span>שם קבוצה</span>
+     
+        <div>    <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox></div>
+           </td><td> <br/>
+<       <span>תיאור</span>
+        <div>    <asp:TextBox ID="description" runat="server"></asp:TextBox></div></td></tr><tr></tr><tr>
+       <td>
+          <br/><br/>
+       
+         <div>   <asp:Button ID="buttomCreatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" /></div>
+      </td><td>
+          <br/><br/>
+      <div><asp:Button ID="buttonJoinGroup" runat="server" Text="לחץ להצטרפות לקבוצה" Width="193px" DoubleClick="joinGroupButton_Click" /></div>
+       
+        </td>
+      </tr>
+        </table>
     </form>
+       </div>
+       </div>
 </body>
 </html>

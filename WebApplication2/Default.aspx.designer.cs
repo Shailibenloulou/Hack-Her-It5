@@ -9,8 +9,11 @@
 
 namespace WebApplication2
 {
+
+
     public partial class Default
     {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -46,6 +49,24 @@ namespace WebApplication2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox groupAns;
+
+        /// <summary>
+        /// checkBoxJoinGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkBoxJoinGroup;
+
+        /// <summary>
+        /// CheckBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
 
         /// <summary>
         /// id control.
@@ -120,12 +141,21 @@ namespace WebApplication2
         protected global::System.Web.UI.WebControls.TextBox description;
 
         /// <summary>
-        /// creatGroupButton control.
+        /// buttomCreatGroupButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button creatGroupButton;
+        protected global::System.Web.UI.WebControls.Button buttomCreatGroupButton;
+
+        /// <summary>
+        /// buttonJoinGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonJoinGroup;
     }
 }

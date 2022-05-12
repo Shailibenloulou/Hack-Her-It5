@@ -65,6 +65,10 @@ namespace WebApplication2
 
             XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
         }
+        protected void joinGroupButton_Click (object sender, EventArgs e)
+        {
+
+        }
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,13 +82,13 @@ namespace WebApplication2
 
         protected void location_TextChanged1(object sender, EventArgs e)
         {
-            List<Place> temp = XmlTools.LoadListFromXMLSerializer<Place>(@"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\test.xml");
+            List<Place> temp = XmlTools.LoadListFromXMLSerializer<Place>(@"C:\Users\yaeli\source\repos\Hack-Her-It5_here\WebApplication2\test.xml");
             for (int i=0; i < temp.Count(); i++)
             {
                 if (temp[i].Name == location.Text)
                     clean.Text = temp[i].Data;
             }
-            List<Group> users = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
+            List<Group> users = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\yaeli\source\repos\Hack-Her-It5_here\WebApplication2\xml\Groups.xml");
             for (int i = 0; i < users.Count(); i++)
             {
                 if (users[i].Name == location.Text)
@@ -105,6 +109,11 @@ namespace WebApplication2
         protected void groupAns_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            ;
         }
     }
 
