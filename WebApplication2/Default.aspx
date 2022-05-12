@@ -27,7 +27,7 @@
         </div>
         
         <p>
-            <asp:TextBox ID="location" runat="server"></asp:TextBox>
+            <asp:TextBox ID="location" runat="server" OnTextChanged="location_TextChanged"></asp:TextBox>
         &nbsp;</p>
         <p>
             רמת נקיות

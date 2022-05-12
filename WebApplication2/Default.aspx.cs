@@ -15,7 +15,10 @@ namespace WebApplication2
            // Label1.Text = "hello"; //tests
         }
 
-       
+        protected void location_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
