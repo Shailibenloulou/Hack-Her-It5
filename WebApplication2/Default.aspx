@@ -17,88 +17,123 @@
         }
 
     </style>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    govmap.createMap('map',
-                        {
-                            token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
-                            layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL", "HOF_NAKI_update","ganim_leumim"],
-                            showXY: true,
-                            //identifyOnClick: true,
-                            isEmbeddedToggle: false,
-                            background: "1",
-                            layersMode: 1,
-                            onClick: alert('click event'),
-                            zoomButtons: false
-                        });
-                    });
-            </script>
-    </head>
-     <body>
-    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            govmap.createMap('map',
+                {
+                    token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
+                    layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+                    showXY: true,
+                    identifyOnClick: true,
+                    isEmbeddedToggle: false,
+                    background: "1",
+                    layersMode: 1,
+                    zoomButtons: true
+                });
+
+            govmap.onEvent(govmap.events.CLICK).then(function (e) {
+                alert("click event ");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="map" style="width: 600px; height: 600px"></div>
     <form id="form1" runat="server">
+        <asp:DropDownList ID="DropDownList1" runat="server">
+        </asp:DropDownList>
         <div class="col-md-7">
-            <div id="map" style="width:600px;height:600px" ></div>
-           </div> 
-        <p >מיקום</p> 
+
+
+
+            <p>
+                מיקום
+            </p>
+        </div>
+
         <p>
-            <asp:TextBox  ID="location" runat="server">חוף הצוק</asp:TextBox>
-        &nbsp;</p>
+            <asp:TextBox ID="location" runat="server">בדיקה</asp:TextBox>
+            &nbsp;
+        </p>
         <p>
             רמת נקיות
         </p>
         <p>
             נקי מאוד</p>
         <p>
-            האם יש קבוצה</p>
+            האם יש קבוצה
+        </p>
         <p>
             לא</p>
+        <p>
+            ת.ז.
+        </p>
+        <p>
+            <asp:TextBox ID="id" runat="server"></asp:TextBox>
+        </p>
         <p>
             שם
         </p>
         <p>
             יעל</p>
         <p>
-            משפחה</p>
+            משפחה
+        </p>
         <p>
             גלוברמן</p>
         <p>
             מספר טלפון
         </p>
         <p>
-            0527703139</p>
-         <p>
-             גודל מקסימלי של קבוצה</p>
+            <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox>
+        </p>
         <p>
-            10</p>
-         <p>
-             כתובת מייל</p>
+            גודל מקסימלי של קבוצה
+        </p>
         <p>
-            yaeli@gmail.com</p>
-         <p>
-             שם קבוצה</p>
+            <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox>
+        </p>
         <p>
-            1</p>
-         <p>
-             &nbsp;</p>
+            כתובת מייל
+        </p>
+        <p>
+            <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            שם קבוצה
+        </p>
+        <p>
+            <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox>
+        </p>
+
+        <p>
+            תיאור
+        </p>
+        <p>
+            <asp:TextBox ID="description" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            &nbsp;
+        </p>
         <p>
             <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
         </p>
         <p>
-            <asp:ListView ID="ListView1" runat="server" DataSourceID="XmlDataSourceY">
-            </asp:ListView>
-            <asp:XmlDataSource ID="XmlDataSourceY" runat="server"></asp:XmlDataSource>
+            &nbsp;
         </p>
         <p>
-            &nbsp;</p>
+            &nbsp;
+        </p>
         <p>
-            &nbsp;</p>
+            &nbsp;
+        </p>
         <p>
-            &nbsp;</p>
+            &nbsp;
+        </p>
         <p>
-            &nbsp;</p>
-     
-        
+            &nbsp;
+        </p>
+
     </form>
     
 </body>
