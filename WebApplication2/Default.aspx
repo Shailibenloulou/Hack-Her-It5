@@ -4,30 +4,50 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>CleanApp</title>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
     <style type="text/css">
+        body{
+            direction:rtl;
+        }
         #ifrMap {
             width: 637px;
             height: 417px;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="col-md-7">
-            <div id="map-container" class="custom-container" style="width:1511px; height:435px;">
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <iframe id='ifrMap' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://www.govmap.gov.il/map.html?bb=1&zb=1&in=1&c=204000,595000&z=0&lay=ATAREI_RATAG'></iframe>
-                <br />
-                <br />
-                <br />
-               </div>
+            <div id="map" style="width:600px;height:600px"></div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    govmap.createMap('map',
+                        {
+                            token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
+                            layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+                            showXY: true,
+                            identifyOnClick: true,
+                            isEmbeddedToggle: false,
+                            background: "1",
+                            layersMode: 1,
+                            zoomButtons: false
+                        });
+
+                    govmap.onEvent(govmap.events.CLICK).then(function (e) {
+                        alert("click event ");
+                    });
+                });
+            </script> 
         
         <p>
             מיקום</p>
         </div>
         
         <p>
-            <asp:TextBox ID="location" runat="server" OnTextChanged="location_TextChanged"></asp:TextBox>
+            <asp:TextBox  ID="location" runat="server">בדיקה</asp:TextBox>
         &nbsp;</p>
         <p>
             רמת נקיות
@@ -75,7 +95,7 @@
          <p>
              &nbsp;</p>
         <p>
-            <asp:Button ID="creatGroupButton" runat="server" OnClick="creatGroupButton" Text="לחץ ליצירת קבוצה" Width="225px" />
+            <asp:Button ID="creatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" />
         </p>
         <p>
             &nbsp;</p>
