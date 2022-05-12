@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication2
 {
-    public class DLXML 
+    public class DLXML
     {
+
         #region beach
         public static List<Place> beaches;
         string beachFilePath = @"C:\Users\chagi\source\repos\WebApplication2\WebApplication2\test.xml";
@@ -18,8 +19,8 @@ namespace WebApplication2
 
         public DLXML()
         {
-                    beaches = new List<Place>();
-                    beaches = WebApplication2.XmlTools.LoadListFromXMLSerializer<Place>(beachFilePath);
+            beaches = new List<Place>();
+            beaches = WebApplication2.XmlTools.LoadListFromXMLSerializer<Place>(beachFilePath);
 
         }
 
