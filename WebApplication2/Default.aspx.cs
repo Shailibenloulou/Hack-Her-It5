@@ -14,15 +14,16 @@ using System.Xml.Serialization;
 using System.Runtime.CompilerServices;
 using System.Xml;
 using System.Text;
-using CsvHelper.Configuration;
-using System.Globalization;
-using CsvHelper.Configuration.Attributes;
 
 namespace WebApplication2
 {
     public partial class Default : System.Web.UI.Page
     {
-       
+        public Default()
+        {
+               
+        }
+
         static private int GroupId = 1;
 
         protected void location_TextChanged(object sender, EventArgs e)
@@ -33,15 +34,8 @@ namespace WebApplication2
         [MethodImpl(MethodImplOptions.Synchronized)]
         protected void creatGroupButton_Click(object sender, EventArgs e)
         {
-            
-
-            var xml = new DLXML();
-            var groupList = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\chagi\source\repos\WebApplication2\WebApplication2\xml\Groups.xml");
+            var groupList = XmlTools.LoadListFromXMLSerializer<Group>(@"Groups.xml");
             Group g = new Group();
-
-            /////////////////////////////////
-            ///read from xml file
-            ////////////////////////////////
             g.Id = GroupId++;
             g.Name = nameOfGroup.Text;
             g.Description = description.Text;
@@ -72,73 +66,66 @@ namespace WebApplication2
             XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\chaya\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
         }
 
-
-
-        //    XmlTextWriter xmlwriter = new XmlTextWriter(Server.MapPath("App_Data/Employee.xml"), Encoding.UTF8);
-
-        //    xmlwriter.Formatting = Formatting.Indented;
-
-        //    xmlwriter.WriteStartDocument();
-
-        //    xmlwriter.WriteStartElement("Employees");
-
-
-
-        //    xmlwriter.WriteStartElement("Employee");
-
-        //    xmlwriter.WriteAttributeString("type", "Permanent");
-
-        //    xmlwriter.WriteElementString("ID", "100");
-
-        //    xmlwriter.WriteElementString("FirstName", "Satheesh");
-
-        //    xmlwriter.WriteElementString("LastName", "Babu");
-
-        //    xmlwriter.WriteElementString("Dept", "IT");
-
-        //    xmlwriter.WriteEndElement();
-
-
-
-        //    xmlwriter.WriteEndElement();
-
-        //    xmlwriter.WriteEndDocument();
-
-        //    xmlwriter.Flush();
-
-        //    xmlwriter.Close();
-
-        //}
-
-        public class BeachRecord
-        {
-            [Index(0)]
-            public string Cleanliness { get; set; }
-            [Index(1)]
-            public string Segment { get; set; }
-            [Index(2)]
-            public string Beach { get; set; }
-
-            public List<BeachRecord> getList()
-            {
-                using (var file = File.OpenRead("C:\\Users\\chagi\\Downloads\\cleancoastindex.csv"))
-                using (var streamReader = new StreamReader(file))
-                using (var csvReader = new CsvHelper.CsvReader(streamReader, new CsvConfiguration(new CultureInfo("he-IL")) { HasHeaderRecord = true, Delimiter = "," }))
-
-                {
-                    return csvReader.GetRecords<BeachRecord>().ToList();
-                    //foreach (var record in records)
-                    //{
-                    //    Console.WriteLine(record.Beach);
-                    //}
-                }
-            }
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
-    }
-}
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void location_TextChanged1(object sender, EventArgs e)
+        {
+            List<Place> temp = XmlTools.LoadListFromXMLSerializer<Place>(@"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\test.xml");
+            for (int i=0; i < temp.Count(); i++)
+            {
+                if (temp[i].Name == location.Text)
+                    clean.Text = "hello";
+            }
+        }
+
+        protected void clean_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    //    XmlTextWriter xmlwriter = new XmlTextWriter(Server.MapPath("App_Data/Employee.xml"), Encoding.UTF8);
+
+    //    xmlwriter.Formatting = Formatting.Indented;
+
+    //    xmlwriter.WriteStartDocument();
+
+    //    xmlwriter.WriteStartElement("Employees");
+
+
+
+    //    xmlwriter.WriteStartElement("Employee");
+
+    //    xmlwriter.WriteAttributeString("type", "Permanent");
+
+    //    xmlwriter.WriteElementString("ID", "100");
+
+    //    xmlwriter.WriteElementString("FirstName", "Satheesh");
+
+    //    xmlwriter.WriteElementString("LastName", "Babu");
+
+    //    xmlwriter.WriteElementString("Dept", "IT");
+
+    //    xmlwriter.WriteEndElement();
+
+
+
+    //    xmlwriter.WriteEndElement();
+
+    //    xmlwriter.WriteEndDocument();
+
+    //    xmlwriter.Flush();
+
+    //    xmlwriter.Close();
+
+    //}
+
+}
