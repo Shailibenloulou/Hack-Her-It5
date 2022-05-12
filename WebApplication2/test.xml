@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPlace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Place>
+		<Name>חוף עכו דרום</Name>
+
+		<Data>מלוכלך</Data>
+	</Place>
+	<Place>
+		<Name>חוף התמרים</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף הצוק</Name>
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>מחוף הצוק ועד חוף תל ברוך</Name>
+
+		<Data>בינוני</Data>
+	</Place>
+</ArrayOfPlace>
