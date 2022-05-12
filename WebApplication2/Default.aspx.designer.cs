@@ -9,11 +9,8 @@
 
 namespace WebApplication2
 {
-
-
     public partial class Default
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>

@@ -11,11 +11,9 @@ namespace WebApplication2
 {
     public class DLXML
     {
-
         #region beach
         public static List<Place> beaches;
         string beachFilePath = @"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\test.xml";
-
 
         public DLXML()
         {
@@ -33,7 +31,6 @@ namespace WebApplication2
 
         //    return v.Where(predicat).OrderByDescending(s => s.StudentId);
         //}
-
 
         #endregion
     }

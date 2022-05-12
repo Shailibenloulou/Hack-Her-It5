@@ -12,9 +12,7 @@ namespace WebApplication2
         public string Description { get; set; }
         public int MaxSize { get; set; }
         public List<User> Participants { get; set; }
-        //public Location Area { get; set; }
-        public string Area { get; set; }
-
+        public Location Area { get; set; }
         public Boolean IsFull { get; set; }
         public Boolean IsDone { get; set; }
 
@@ -25,7 +23,7 @@ namespace WebApplication2
             Description = "default";
             MaxSize = 5;
             Participants = new List<User>();
-            Area = "default"; //new Location(0, 0);
+            Area = new Location(0, 0);
             IsFull = true;
             IsDone = true;
         }

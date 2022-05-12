@@ -18,6 +18,4 @@ namespace WebApplication2
             return XmlTools.LoadListFromXMLSerializer<Place>(@"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\test.xml");
         }
     }
-
-    
 }

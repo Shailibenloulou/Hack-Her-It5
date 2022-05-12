@@ -47,7 +47,7 @@ namespace WebApplication2
             u.Email = mailAddress.Text;
             u.Phone = phoneNumber.Text;
             g.Participants = new List<User>() { u };
-            g.Area = location.Text; //new Location();//to take location from map
+            g.Area = new Location();//to take location from map
             g.IsFull = false;
             g.IsDone = false;
 
@@ -63,7 +63,7 @@ namespace WebApplication2
 
             groupList.Add(g);
 
-            XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\chaya\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
+            XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
         }
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,7 +84,6 @@ namespace WebApplication2
                 if (temp[i].Name == location.Text)
                     clean.Text = temp[i].Data;
             }
-
             List<Group> users = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
             for (int i = 0; i < users.Count(); i++)
             {
@@ -95,7 +94,6 @@ namespace WebApplication2
                 }
                 else
                     groupAns.Text = "לא";
-
             }
         }
 
@@ -118,8 +116,6 @@ namespace WebApplication2
 
     //    xmlwriter.WriteStartElement("Employees");
 
-
-
     //    xmlwriter.WriteStartElement("Employee");
 
     //    xmlwriter.WriteAttributeString("type", "Permanent");
@@ -134,8 +130,6 @@ namespace WebApplication2
 
     //    xmlwriter.WriteEndElement();
 
-
-
     //    xmlwriter.WriteEndElement();
 
     //    xmlwriter.WriteEndDocument();
@@ -145,5 +139,4 @@ namespace WebApplication2
     //    xmlwriter.Close();
 
     //}
-
 }

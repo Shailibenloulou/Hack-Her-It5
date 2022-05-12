@@ -43,7 +43,7 @@
         <div class="col-md-7">
 
             <p>
-                מיקום<asp:TextBox ID="location" runat="server" Height="31px" OnTextChanged="location_TextChanged1" style="margin-right: 27px; margin-top: 17px" Width="149px"> </asp:TextBox>
+                מיקום<asp:TextBox ID="location" runat="server" Height="19px" OnTextChanged="location_TextChanged1" style="margin-right: 27px; margin-top: 17px" Width="149px"></asp:TextBox>
            <%-- &nbsp;<asp:ListView datasourceid="ObjectDataSource1" ID="ListView1" runat="server" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" style="margin-right: 151px; margin-top: 6px">
                <LayoutTemplate>
           <table cellpadding="4" width="500" runat="server" id="tblCountries">
