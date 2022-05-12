@@ -14,16 +14,59 @@ using System.Xml.Serialization;
 using System.Runtime.CompilerServices;
 using System.Xml;
 using System.Text;
+using System.Data;
 
 namespace WebApplication2
 {
     public partial class Default : System.Web.UI.Page
     {
+        string UserPlace;
         public Default()
         {
                
         }
-
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                this.BindXml();
+            }
+        }
+        private void BindXml()
+        {
+            string filePath = Server.MapPath("/test.xml");
+            using (DataSet ds = new DataSet())
+            {
+                ds.ReadXml(filePath);
+                ddlCities.DataSource = ds;
+                ddlCities.DataTextField = "Name";
+                ddlCities.DataValueField = "Data";
+                ddlCities.DataBind();
+            }
+        }
+        protected void ddlCities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clean.Text = ddlCities.SelectedValue;
+            UserPlace = ddlCities.Text;
+            if (clean.Text == "נקי" || clean.Text == "נקי מאוד")
+            {
+                //hidden buttons
+                //offer another place
+            }
+            else
+            {
+                string filePath = Server.MapPath("/Groups.xml");
+                using (DataSet ds = new DataSet())
+                {
+                    ds.ReadXml(filePath);
+                    ddlCities.DataSource = ds;
+                    ddlCities.DataTextField = "Name";
+                    ddlCities.DataValueField = "IsFull";
+                    ddlCities.DataValueField = "IsDone";
+                    ddlCities.DataBind();
+                }
+            }
+        }
         static private int GroupId = 1;
 
         protected void location_TextChanged(object sender, EventArgs e)
@@ -75,30 +118,9 @@ namespace WebApplication2
             
         }
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         protected void location_TextChanged1(object sender, EventArgs e)
         {
-            List<Place> temp = XmlTools.LoadListFromXMLSerializer<Place>(@"C:\Users\yaeli\source\repos\Hack-Her-It5_here\WebApplication2\test.xml");
-            for (int i=0; i < temp.Count(); i++)
-            {
-                if (temp[i].Name == location.Text)
-                    clean.Text = temp[i].Data;
-            }
-            List<Group> users = XmlTools.LoadListFromXMLSerializer<Group>(@"C:\Users\yaeli\source\repos\Hack-Her-It5_here\WebApplication2\xml\Groups.xml");
-            for (int i = 0; i < users.Count(); i++)
-            {
-                if (users[i].Name == location.Text)
-                {
-                    if (users[i].Participants.Count() < users[i].MaxSize)
-                        groupAns.Text = " כן, מעוניין להצטרף?";
-                }
-                else
-                    groupAns.Text = "לא";
-            }
+            
         }
 
         protected void clean_TextChanged(object sender, EventArgs e)
@@ -113,7 +135,7 @@ namespace WebApplication2
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            ;
+            
         }
     }
 

@@ -4,11 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    
     <title>CleanApp</title>
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
     <style type="text/css">
         body {
+            background-color: lightgoldenrodyellow;
             direction: rtl;
         }
 
@@ -53,15 +55,16 @@
 }</script>
 </head>
 <body>
-   <div id="wrapper"> <div id="map" style="width:50%"></div>
+  
   <div id="div2">  <form id="form1" runat="server">
       <!--  <div class="col-md-7"></div>-->
             <table>
-<tr></tr><tr><td>
+<tr><td>
         <br/>
             <span>    מיקום</span>
-   <div> <asp:TextBox ID="location" runat="server" Height="19px" OnTextChanged="location_TextChanged1" ></asp:TextBox></div>
-     
+</asp:xmldatasource><p>
+                <asp:DropDownList ID="ddlCities" runat="server" AutoPostBack="True" Height="23px" OnSelectedIndexChanged="ddlCities_SelectedIndexChanged">
+                </asp:DropDownList>     
   
       </td>
           <td>
@@ -76,7 +79,7 @@
        
         
           <div>  <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox></div>
-        </td></tr><tr></tr><tr>
+        </td><td>      </td><td></td><td align="left" rowspan="10" colspan="4"  style="width: 50%"><div id="map" style="width:500px; height: 500px;"></div></td>.<td> <div id="wrapper"> </td></tr><tr></tr><tr>
            <td>
          <span>   האם אתה רוצה להצטרף לקבוצה קיימת</span>
         
@@ -126,10 +129,11 @@
        <td>
           <br/><br/>
        
-         <div>   <asp:Button ID="buttomCreatGroupButton" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" /></div>
+         <div>   <asp:Button ID="buttomCreatGroupButton" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" /></div>
       </td><td>
           <br/><br/>
-      <div><asp:Button ID="buttonJoinGroup" runat="server" Text="לחץ להצטרפות לקבוצה" Width="193px" DoubleClick="joinGroupButton_Click" /></div>
+          <br/>
+      <div><asp:Button ID="buttonJoinGroup" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ להצטרפות לקבוצה" Width="193px" DoubleClick="joinGroupButton_Click" /></div>
        
         </td>
       </tr>
