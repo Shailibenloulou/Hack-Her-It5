@@ -10,14 +10,22 @@ namespace WebApplication2
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public IEnumerable<User> Participants { get; set; }
+        public int MaxSize { get; set; }
+        public List<User> Participants { get; set; }
         public Location Area { get; set; }
         public Boolean IsFull { get; set; }
         public Boolean IsDone { get; set; }
 
         public Group()
         {
-
+            Id = 0;
+            Name = "default";
+            Description = "default";
+            MaxSize = 0;
+            Participants = new List<User>();
+            Area = new Location(0, 0);
+            IsFull = true;
+            IsDone = true;
         }
     }
 }
