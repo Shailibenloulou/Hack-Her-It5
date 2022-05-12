@@ -17,12 +17,26 @@
         }
 
     </style>
+     <meta charset="utf-8" />
+
+    <!-- Reference to the Bing Maps SDK -->
+    <script type='text/javascript'
+            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AnkqF7RGil_s1xYZBAo5XV4nDDfltzlNywqVo1K91U_fmy_cHQLfemwzdo7llb1l]' 
+            async defer></script>
+    
+    <script type='text/javascript'>
+        function GetMap() {
+            var map = new Microsoft.Maps.Map('#myMap');
+
+            //Add your post map load code here.
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="col-md-7">
             <div id="map" style="width:600px;height:600px"></div>
-            <script type="text/javascript">
+          <%--  <script type="text/javascript">
                 $(document).ready(function () {
                     govmap.createMap('map',
                         {
@@ -41,7 +55,14 @@
                     });
                 });
             </script> 
-        
+        <div class="grid-container">
+  <div class="grid-item">1</div>
+  --%>
+
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+
+</div>
+    <div id="wrapper" style=" width: 1009px; overflow: hidden;">
         <p>
             מיקום</p>
         </div>
@@ -101,14 +122,17 @@
             &nbsp;</p>
         <p>
             &nbsp;</p>
-        <p>
+        <p style="height: 147px">
             &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
+    <div id="wrapper" style=" width: 1009px; overflow: hidden;">
+       
+</div>
         
+        </div>
     </form>
 </body>
+   
+</div>
+    
 </html>
 
