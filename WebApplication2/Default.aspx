@@ -59,14 +59,12 @@
             רמת נקיות
         </p>
         <p>
-            <asp:TextBox ID="cleaninesLevel" runat="server"></asp:TextBox>
-        </p>
+            נקי מאוד</p>
         <p>
             האם יש קבוצה
         </p>
         <p>
-            <asp:TextBox ID="isTherAnotherGroup" runat="server"></asp:TextBox>
-        </p>
+            לא</p>
         <p>
             ת.ז.
         </p>
@@ -77,14 +75,12 @@
             שם
         </p>
         <p>
-            <asp:TextBox ID="name" runat="server"></asp:TextBox>
-        </p>
+            יעל</p>
         <p>
             משפחה
         </p>
         <p>
-            <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
-        </p>
+            גלוברמן</p>
         <p>
             מספר טלפון
         </p>
