@@ -62,6 +62,12 @@ namespace WebApplication2
 
             XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\chaya\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
         }
+
+        protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ICollection<Place> temp = DLXML.beaches;
+            ListView1.Items.Add((ListViewDataItem)temp);
+        }
     }
 
     //    XmlTextWriter xmlwriter = new XmlTextWriter(Server.MapPath("App_Data/Employee.xml"), Encoding.UTF8);

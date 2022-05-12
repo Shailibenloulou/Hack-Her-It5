@@ -8,14 +8,14 @@
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
     <style type="text/css">
-        body{
-            direction:rtl;
+        body {
+            direction: rtl;
         }
+
         #ifrMap {
             width: 637px;
             height: 417px;
         }
-
     </style>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -44,10 +44,9 @@
         </asp:DropDownList>
         <div class="col-md-7">
 
-
-
             <p>
-                מיקום
+                מיקום <asp:ListView ID="ListView1" runat="server" DataSourceID="XmlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" style="margin-right: 151px; margin-top: 6px">
+                </asp:ListView>
             </p>
         </div>
 
@@ -59,12 +58,14 @@
             רמת נקיות
         </p>
         <p>
-            נקי מאוד</p>
+            נקי מאוד
+        </p>
         <p>
             האם יש קבוצה
         </p>
         <p>
-            לא</p>
+            לא
+        </p>
         <p>
             ת.ז.
         </p>
@@ -74,9 +75,10 @@
         <p>
             שם
         </p>
-         <p>
+        <p>
             <asp:TextBox ID="name" runat="server"></asp:TextBox>
         </p>
+        <p>
             משפחה
         </p>
         <p>
