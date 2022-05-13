@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
+
     <title>CleanApp</title>
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
@@ -17,6 +17,10 @@
         #ifrMap {
             width: 50%;
             height: 417px;
+        }
+
+        .auto-style1 {
+            width: 226px;
         }
     </style>
     <script type="text/javascript">
@@ -38,7 +42,7 @@
             });
         });
     </script>
-    <script  type="text/css">
+    <script type="text/css">
 #wrapper {
     width: 500px;
     border: 1px solid black;
@@ -55,91 +59,163 @@
 }</script>
 </head>
 <body>
-  
-  <div id="div2">  <form id="form1" runat="server">
-      <!--  <div class="col-md-7"></div>-->
-            <table>
-<tr><td>
-        <br/>
-            <span>    מיקום</span>
-</asp:xmldatasource><p>
-                <asp:DropDownList ID="ddlCities" runat="server" AutoPostBack="True" Height="23px" OnSelectedIndexChanged="ddlCities_SelectedIndexChanged">
-                </asp:DropDownList>     
-  
-      </td>
-          <td>
-               <br/>
-           <span style="color:red; background-color:blue"> רמת נקיות</span>        
-        
-           <div> <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged" BackColor="Yellow"></asp:TextBox></div>
-        </td>
-           <td>
-                <br/>
-          <span>  האם יש קבוצה </span>
-       
-        
-          <div>  <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox></div>
-        </td><td>      </td><td></td><td align="left" rowspan="10" colspan="4"  style="width: 50%"><div id="map" style="width:500px; height: 500px;"></div></td>.<td> <div id="wrapper"> </td></tr><tr></tr><tr>
-           <td>
-         <span>   האם אתה רוצה להצטרף לקבוצה קיימת</span>
-        
-          <div>  <asp:CheckBox ID="checkBoxJoinGroup"  runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" BorderColor="Red" />
-      </div></td>
-           
-           <td><span>
-            האם אתה רוצה ליצור קבוצה חדשה</span>
-        
-        <div><asp:CheckBox ID="CheckBox1" runat="server" /></div>
-        <br />
-             </td></tr><tr></tr><tr>
-             <td>
-          <span>  ת.ז.</span>
-        
-           <div> <asp:TextBox ID="id" runat="server" BorderStyle="Double"></asp:TextBox></div>
-        </td><td>
-      <span>      שם</span>
-        
-        
-        <div> <asp:TextBox ID="name" runat="server"></asp:TextBox></div>
-       </td><td><span>
-            משפחה
-        </span><div>
-            <asp:TextBox ID="lastName" runat="server"></asp:TextBox></div>
-     </td><td>
-           <span> מספר טלפון</span>
 
-          <div> <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox></div></td>
-                 </tr><tr></tr><tr></tr><tr>
-             <td>
-                 <br/>
-          <span>גודל מקסימלי של קבוצה</span>
-       
-          <div>  <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox></div>
-      </td><td> <br/>
-          <span>  כתובת מייל</span>
-      
-         <div>   <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox></div></td>
-       <td> <br/>
-        <span>שם קבוצה</span>
-     
-        <div>    <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox></div>
-           </td><td> <br/>
-<       <span>תיאור</span>
-        <div>    <asp:TextBox ID="description" runat="server"></asp:TextBox></div></td></tr><tr></tr><tr>
-       <td>
-          <br/><br/>
-       
-         <div>   <asp:Button ID="buttomCreatGroupButton" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" DoubleClick="creatGroupButton_Click" /></div>
-      </td><td>
-          <br/><br/>
-          <br/>
-      <div><asp:Button ID="buttonJoinGroup" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ להצטרפות לקבוצה" Width="193px" DoubleClick="joinGroupButton_Click" /></div>
-       
-        </td>
-      </tr>
-        </table>
-    </form>
-       </div>
-       </div>
+    <div id="div2">
+        <form id="form1" runat="server">
+            <!--  <div class="col-md-7"></div>-->
+            <table>
+                <tr>
+                    <td>
+                        <br />
+                        <span>מיקום</span>
+                        </asp:xmldatasource><p>
+                            <asp:DropDownList ID="ddlCities" runat="server" AutoPostBack="True" Height="23px" OnSelectedIndexChanged="ddlCities_SelectedIndexChanged">
+                            </asp:DropDownList>
+                             
+                       
+                    </td>
+                    <td>
+                        <br />
+                        <span style="color: red; background-color: blue">רמת נקיות</span>
+
+                        <div>
+                            <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged" BackColor="Yellow"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td class="auto-style1">
+                        <br />
+                        <span>
+                            <asp:Label ID="Label1" runat="server" Text="הכנס פרטים ובחר קבוצה"></asp:Label> </span>
+
+
+                        <div>
+                            <asp:DropDownList ID="DropDownGroup" runat="server" AutoPostBack="True" Height="23px" OnSelectedIndexChanged="DropDownGroup_SelectedIndexChanged" Width="175px">
+                            </asp:DropDownList>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td align="left" rowspan="3" colspan="4" style="width: 50%">
+                        <div id="map" style="width: 500px; height: 500px;"></div>
+                    </td>
+                    ..<td>
+                        <div id="wrapper">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label2" runat="server" Text="האם אתה רוצה להצטרף לקבוצה קיימת"></asp:Label></span>
+
+                        <div>
+                            <asp:CheckBox ID="checkBoxJoinGroup" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" BorderColor="Red" />
+                        </div>
+                    </td>
+
+                    <td><span>
+                        <asp:Label ID="Label3" runat="server" Text="האם אתה רוצה ליצור קבוצה חדשה"></asp:Label></span>
+
+                        <div>
+                            <asp:CheckBox ID="CheckBox1" runat="server" />
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label4" runat="server" Text="ת.ז."></asp:Label></span>
+
+                        <div>
+                            <asp:TextBox ID="id" runat="server" BorderStyle="Double"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label5" runat="server" Text="שם"></asp:Label></span>
+
+
+                        <div>
+                            <asp:TextBox ID="name" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td class="auto-style1">
+                        <span>
+                            <asp:Label ID="Label6" runat="server" Text="משפחה"></asp:Label></span>
+                        <div>
+                            <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label7" runat="server" Text="מספר טלפון"></asp:Label></span>
+
+                        <div>
+                            <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                        <span>
+                            <asp:Label ID="Label8" runat="server" Text="גודל מקסימלי של קבוצה"></asp:Label></span>
+
+                        <div>
+                            <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td>
+                        <br />
+                        <span>
+                            <asp:Label ID="Label9" runat="server" Text="כתובת מייל"></asp:Label></span>
+
+                        <div>
+                            <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td class="auto-style1">
+                        <br />
+                        <span>
+                            <asp:Label ID="Label10" runat="server" Text="שם קבוצה"></asp:Label></span>
+
+                        <div>
+                            <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                    <td>
+                        <br />
+                        &nbsp;</td>
+                    <td>
+                        <br />
+                        &nbsp;<span><asp:Label ID="Label11" runat="server" Text="תיאור"></asp:Label></span>
+                        <div>
+                            <asp:TextBox ID="description" runat="server"></asp:TextBox>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                        <br />
+
+                        <div>
+                            <asp:Button ID="buttomCreatGroupButton" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
+                        </div>
+                    </td>
+                    <td>
+                        <br />
+                        <br />
+                        <br />
+                        <div>
+                            <asp:Button ID="buttonJoinGroup" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ להצטרפות לקבוצה" Width="193px" OnClick="joinGroupButton_Click" />
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </div>
 </body>
 </html>
