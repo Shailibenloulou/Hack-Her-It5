@@ -95,46 +95,55 @@ id="roboto-plus-backups">New York</p>
             <!--  <div class="col-md-7"></div>-->
             <table>
                 <tr>
-                    <td class="auto-style5">
+                    <td>
+                        <br />
                         <span>מיקום</span>
                         </asp:xmldatasource><p>
                             <asp:DropDownList ID="ddlCities" runat="server" AutoPostBack="True" Height="23px" OnSelectedIndexChanged="ddlCities_SelectedIndexChanged">
                             </asp:DropDownList>
+                             
+                       
                     </td>
-                    <td class="auto-style6">
-                        <span style="color: black;">רמת נקיות</span>
+                    <td>
+                        <br />
+                        <span style="color: red; background-color: blue">רמת נקיות</span>
 
                         <div>
-                            <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="clean" runat="server" OnTextChanged="clean_TextChanged" BackColor="Yellow"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style4">
-                        <span>האם יש קבוצה </span>
+                    <td class="auto-style1">
+                        <br />
+                        <span>
+                            <asp:Label ID="Label1" runat="server" Text="הכנס פרטים ובחר קבוצה"></asp:Label> </span>
 
 
                         <div>
-                            <asp:TextBox ID="groupAns" runat="server" OnTextChanged="groupAns_TextChanged"></asp:TextBox>
+                            <asp:DropDownList ID="DropDownGroup" runat="server" AutoPostBack="True" Height="23px" OnSelectedIndexChanged="DropDownGroup_SelectedIndexChanged" Width="175px">
+                            </asp:DropDownList>
                         </div>
                     </td>
-                    <td class="auto-style7">&nbsp;</td>
                     <td></td>
-                    <td align="left" rowspan="5" colspan="4" style="width: 50%">
-                        <div id="map" style="width: 450px; height: 500px;"></div>
+                    <td></td>
+                    <td align="left" rowspan="3" colspan="4" style="width: 50%">
+                        <div id="map" style="width: 500px; height: 500px;"></div>
                     </td>
-                    .<td>
+                    ..<td>
                         <div id="wrapper">
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
-                        <span>האם אתה רוצה להצטרף לקבוצה קיימת</span>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label2" runat="server" Text="האם אתה רוצה להצטרף לקבוצה קיימת"></asp:Label></span>
 
                         <div>
                             <asp:CheckBox ID="checkBoxJoinGroup" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" BorderColor="Red" />
                         </div>
                     </td>
 
-                    <td class="auto-style6"><span>האם אתה רוצה ליצור קבוצה חדשה</span>
+                    <td><span>
+                        <asp:Label ID="Label3" runat="server" Text="האם אתה רוצה ליצור קבוצה חדשה"></asp:Label></span>
 
                         <div>
                             <asp:CheckBox ID="CheckBox1" runat="server" />
@@ -143,29 +152,33 @@ id="roboto-plus-backups">New York</p>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
-                        <span>ת.ז.</span>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label4" runat="server" Text="ת.ז."></asp:Label></span>
 
                         <div>
                             <asp:TextBox ID="id" runat="server" BorderStyle="Double"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style6">
-                        <span>שם</span>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label5" runat="server" Text="שם"></asp:Label></span>
 
 
                         <div>
                             <asp:TextBox ID="name" runat="server"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style4"><span>משפחה
-                    </span>
+                    <td class="auto-style1">
+                        <span>
+                            <asp:Label ID="Label6" runat="server" Text="משפחה"></asp:Label></span>
                         <div>
                             <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style7">
-                        <span>מספר טלפון</span>
+                    <td>
+                        <span>
+                            <asp:Label ID="Label7" runat="server" Text="מספר טלפון"></asp:Label></span>
 
                         <div>
                             <asp:TextBox ID="phoneNumber" runat="server"></asp:TextBox>
@@ -173,52 +186,59 @@ id="roboto-plus-backups">New York</p>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
+                    <td>
                         <br />
-                        <span>תיאור</span>
+                        <span>
+                            <asp:Label ID="Label8" runat="server" Text="גודל מקסימלי של קבוצה"></asp:Label></span>
 
                         <div>
-                            <asp:TextBox ID="description" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style6">
+                    <td>
                         <br />
-                        <span>כתובת מייל</span>
+                        <span>
+                            <asp:Label ID="Label9" runat="server" Text="כתובת מייל"></asp:Label></span>
 
                         <div>
                             <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style1">
                         <br />
-                        <span>שם קבוצה</span>
+                        <span>
+                            <asp:Label ID="Label10" runat="server" Text="שם קבוצה"></asp:Label></span>
 
                         <div>
                             <asp:TextBox ID="nameOfGroup" runat="server"></asp:TextBox>
                         </div>
                     </td>
-                    <td class="auto-style7">
+                    <td>
                         <br />
-                        <       <span>גודל מקסימלי של קבוצה </span>
+                        &nbsp;</td>
+                    <td>
+                        <br />
+                        &nbsp;<span><asp:Label ID="Label11" runat="server" Text="תיאור"></asp:Label></span>
                         <div>
-                            <asp:TextBox ID="maxNumOfMemmbers" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="description" runat="server"></asp:TextBox>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
+                    <td>
                         <br />
                         <br />
 
                         <div>
-                            <asp:Button ID="buttomCreatGroupButton" BackColor="lightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ ליצירת קבוצה" Width="220px" OnClick="creatGroupButton_Click" />
+                            <asp:Button ID="buttomCreatGroupButton" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ ליצירת קבוצה" Width="225px" OnClick="creatGroupButton_Click" />
                         </div>
                     </td>
-                    <td class="auto-style6">
+                    <td>
+                        <br />
                         <br />
                         <br />
                         <div>
-                            <asp:Button ID="buttonJoinGroup" BackColor="lightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ להצטרפות לקבוצה" Width="220px" OnClick="joinGroupButton_Click" />
+                            <asp:Button ID="buttonJoinGroup" BackColor="LightGreen" BorderColor="WhiteSmoke" runat="server" Text="לחץ להצטרפות לקבוצה" Width="193px" OnClick="joinGroupButton_Click" />
                         </div>
 
                     </td>
@@ -227,21 +247,5 @@ id="roboto-plus-backups">New York</p>
         </form>
     </div>
     </div>
-    <table class="auto-style8">
-        <tr>
-            <td class="auto-style11"></td>
-
-        </tr>
-        <tr>
-            <td class="auto-style11">&nbsp;</td>
-            <td class="auto-style9">&nbsp;</td>
-        </tr>
-
-        <tr>
-            <td class="auto-style11">&nbsp;</td>
-            <td class="auto-style9">
-                <img alt="" class="auto-style10" src="images/environment.png" /></td>
-        </tr>
-    </table>
 </body>
 </html>
