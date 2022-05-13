@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 using System.Xml;
 using System.Text;
 using System.Data;
+using System.Net.Mail;
+using System.Net;
 
 namespace WebApplication2
 {
@@ -106,7 +108,55 @@ namespace WebApplication2
 
             groupList.Add(g);
 
-            XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\שילי\source\repos\Hack-Her-It5\WebApplication2\xml\Groups.xml");
+            XmlTools.SaveListToXMLSerializer(groupList, @"C:\Users\yaeli\source\repos\Hack-Her-It5_here\WebApplication2\Group.cs");
+            SendEmail();
+
+        }
+        /// <summary>
+        /// sends an email to the new user
+        /// </summary>
+        private void SendEmail()
+        {
+            // Create a System.Net.Mail.MailMessage object
+            MailMessage message = new MailMessage();
+
+            // Add a recipient
+            message.To.Add(mailAddress.Text);
+
+            // Add a message subject
+            message.Subject = "Account activation";
+
+            // Add a message body
+            message.Body = "שלום " + name.Text + "\n" +
+                "תודה רבה שנרשמת לאתר CleaNature.\n" +
+                "אנחנו שמחים שבחרת ללכת ולנקות את ארץ ישראל שלנו.\n" +
+                "" +
+                "לכל פניה או בקשה פנה אלינו במייל customerService@CleaNature.com ,\n" +
+                " CleaNature בברכה צוות ";
+
+            // Create a System.Net.Mail.MailAddress object and 
+            // set the sender email address and display name.
+            message.From = new MailAddress("CleaNature@gmail.com", "CleNature");
+
+            // Create a System.Net.Mail.SmtpClient object
+            // and set the SMTP host and port number
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+
+            // If your server requires authentication add the below code
+            // =========================================================
+            // Enable Secure Socket Layer (SSL) for connection encryption
+            smtp.EnableSsl = true;
+
+            // Do not send the DefaultCredentials with requests
+            smtp.UseDefaultCredentials = false;
+
+            // Create a System.Net.NetworkCredential object and set
+            // the username and password required by your SMTP account
+            smtp.Credentials = new NetworkCredential("CleaNature@gmail.com", "xxx");
+            // =========================================================
+
+            // Send the message
+            smtp.Send(message);
         }
         protected void joinGroupButton_Click (object sender, EventArgs e)
         {

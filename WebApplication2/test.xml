@@ -3,7 +3,7 @@
 	<Place>
 		<Name>חוף עכו דרום</Name>
 
-		<Data>מלוכלך</Data>
+		<Data>נקי</Data>
 	</Place>
 	<Place>
 		<Name>חוף התמרים</Name>
@@ -18,5 +18,176 @@
 		<Name>מחוף הצוק ועד חוף תל ברוך</Name>
 
 		<Data>בינוני</Data>
+	</Place>
+	<Place>
+		<Name>חוף שדות ים</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף מעיין צבי</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף גן לאומי אשקלון </Name>
+
+		<Data>בינוני</Data>
+	</Place>
+	<Place>
+		<Name>חוף הבונים</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף תל ברוך</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף בוסתן הגליל</Name>
+
+		<Data>בינוני</Data>
+	</Place>
+	<Place>
+		<Name>חוף ראש הנקרה</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף אשקלון דרום</Name>
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף קרית ים דרום</Name>
+
+		<Data>בינוני</Data>
+	</Place>
+	<Place>
+		<Name>חוף גן לאומי שפך נחל שורק</Name>
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף טירת הכרמל</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף ניצנים דרום</Name>
+
+		<Data>בינוני</Data>
+	</Place>
+	<Place>
+		<Name>חוף חצרות יסף</Name>
+
+		<Data>לא בוצע מדד</Data>
+	</Place>
+	<Place>
+
+		<Name>	חוף ג'סר א-זרקא</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף אשדוד דרום</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף זיקים צפון</Name>
+
+		<Data>מלוכלך מאוד</Data>
+	</Place>
+	ה
+	<Place>
+		<Name>חוף חברת חשמל</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף נעורים</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף חולות פלמחים-גן רווה</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף בית ינאי</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף  מעגן מיכאל</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף חדרה דרום</Name>
+
+		<Data>בנוני</Data>
+	</Place>
+	<Place>
+		<Name>חוף הרצליה דרום</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+
+	<Place>
+		<Name>חוף אשקלון צפון  </Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף חולות פלמחים-שטח אש</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף גן לאומי פלמחים</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף מפרץ השמש</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף נהריה דרום</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף אלמוג שמורה פתוחה דרום</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף ארסוף דרום</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף מפרץ תל דור</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף קיסריה אקוודוקט</Name>
+
+		<Data>נקי</Data>
+	</Place>
+	<Place>
+		<Name>חוף הצוק</Name>
+
+		<Data>נקי מאוד</Data>
+	</Place>
+	<Place>
+		<Name>חוף זיים דרום</Name>
+
+		<Data>מלוכלך</Data>
 	</Place>
 </ArrayOfPlace>

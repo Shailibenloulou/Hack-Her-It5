@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <ArrayOfGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Group>
-    <Id>1</Id>
-    <Name>חוף התמרים</Name>
-    <Description>28.04</Description>
-    <MaxSize>20</MaxSize>
-    <Participants>
-      <User>
-        <Id>213088636</Id>
-        <FirstName>חיה</FirstName>
-        <LastName>פיליפס</LastName>
-        <Email>chayaphil@gmail.com</Email>
-        <Phone>0586713868</Phone>
-      </User>
-    </Participants>
-    <Area>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-    </Area>
-    <IsFull>false</IsFull>
-    <IsDone>false</IsDone>
-  </Group>
+	<Group>
+		<Id>1</Id>
+		<Name>חוף עכו דרום</Name>
+		<Description>849ץ39</Description>
+		<MaxSize>30</MaxSize>
+		<Participants>
+			<User>
+				<Id>5408433</Id>
+				<FirstName>שילי</FirstName>
+				<LastName>גלוברמן</LastName>
+				<Email>yaligloberman@gmail.com</Email>
+				<Phone>5894330</Phone>
+			</User>
+		</Participants>
+		<Area>
+			<Longitude>0</Longitude>
+			<Latitude>0</Latitude>
+		</Area>
+		<IsFull>false</IsFull>
+		<IsDone>false</IsDone>
+	</Group>
 </ArrayOfGroup>

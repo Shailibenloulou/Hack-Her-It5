@@ -105,13 +105,13 @@ namespace WebApplication2
         protected global::System.Web.UI.WebControls.TextBox phoneNumber;
 
         /// <summary>
-        /// maxNumOfMemmbers control.
+        /// description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox maxNumOfMemmbers;
+        protected global::System.Web.UI.WebControls.TextBox description;
 
         /// <summary>
         /// mailAddress control.
@@ -132,13 +132,13 @@ namespace WebApplication2
         protected global::System.Web.UI.WebControls.TextBox nameOfGroup;
 
         /// <summary>
-        /// description control.
+        /// maxNumOfMemmbers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox description;
+        protected global::System.Web.UI.WebControls.TextBox maxNumOfMemmbers;
 
         /// <summary>
         /// buttomCreatGroupButton control.
